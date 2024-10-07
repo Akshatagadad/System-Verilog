@@ -1,0 +1,15 @@
+module argument_passing;
+  int q;
+
+  //function to add three integer numbers.
+  function int sum(int x=5,y=10,z=20);
+    return x+y+z;   
+  endfunction
+
+  initial begin
+    q = sum( , ,10 );
+    $display("-----------------------------------------------------------------");
+    $display("\tValue of z = %0d",q);
+    $display("-----------------------------------------------------------------");
+  end
+endmodule
