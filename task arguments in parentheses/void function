@@ -1,0 +1,14 @@
+module sv_function;
+  int x;
+  //void function to display current simulation time 
+  function void current_time;
+    $display("\tCurrent simulation time is %0d",$time);    
+  endfunction
+ 
+  initial begin
+    #10;
+    current_time();
+    #20;
+    current_time();
+  end
+endmodule
