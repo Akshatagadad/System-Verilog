@@ -1,0 +1,13 @@
+module sv_function;
+  int x;
+   //function to add two integer numbers. 
+  function int sum;
+    input int a,b;
+    return a+b;    
+  endfunction
+ 
+  initial begin
+    $display("Calling function with void");
+    void'(sum(10,5));
+  end
+ endmodule
