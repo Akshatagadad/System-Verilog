@@ -1,0 +1,11 @@
+module argument_passing;
+  int x,y,z;
+
+  function void display(int x,string y);
+    $display("\tValue of x = %0d, y = %0s",x,y);   
+  endfunction
+
+  initial begin
+    display(.y("Hello World"),.x(2016));
+  end
+endmodule
