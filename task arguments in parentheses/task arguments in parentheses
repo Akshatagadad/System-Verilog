@@ -1,0 +1,13 @@
+module sv_task;  //module declaration
+  int x;  //variable declaration
+  
+  //task to add two integer numbers.
+  task sum(input int a,b,c,output int d); //task declaration
+    d = a+b+c; //task body..It calculates the sum of a and b and assigns it to the output variable c.
+  endtask
+
+  initial begin  //initial block
+    sum(10,5,2,x); //The result of 10 + 5 will be stored in the output variable x
+    $display("\tValue of x = %0d",x); //the $display system function prints the value of x to the console
+  end
+endmodule
