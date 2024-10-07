@@ -1,0 +1,31 @@
+class parent_class;
+  bit [31:0] addr;
+endclass
+
+class child_class extends parent_class;
+  bit [31:0] data;
+endclass
+
+
+class child1 extends child_class;
+  int d;
+endclass
+
+
+class child2 extends child1;
+  int e;
+endclass
+
+class child3 extends child2;
+  int f;
+endclass
+
+
+module inheritence;
+  initial begin
+    
+    child3 c=new();
+    c.addr=30;
+    $display("the value of addr=%0d",c.addr);
+  end
+endmodule
