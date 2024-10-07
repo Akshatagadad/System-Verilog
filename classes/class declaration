@@ -1,0 +1,14 @@
+class sv_class;
+  //class properties
+  int x;
+
+  //method-1
+  task set(int i);
+    x = i;
+  endtask
+
+  //method-2
+  function int get();
+    return x;
+  endfunction
+endclass
