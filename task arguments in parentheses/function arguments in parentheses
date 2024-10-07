@@ -1,0 +1,12 @@
+module sv_function;
+  int x;
+  //function to add two integer numbers.
+  function sum(input int a,b,output int c);
+    c = a+b;   
+  endfunction
+
+  initial begin
+    sum(10,5,x);
+    $display("\tValue of x = %0d",x);
+  end
+endmodule
