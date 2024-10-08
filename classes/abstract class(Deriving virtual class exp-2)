@@ -1,0 +1,21 @@
+//abstract class
+virtual class packet;
+  bit [31:0] addr;
+endclass
+ 
+class extended_packet extends packet;
+  function void display;
+    $display("------------------------------------------");
+    $display("Value of addr is %0d", addr);
+    $display("------------------------------------------");
+  endfunction
+endclass
+ 
+module virtual_class;
+  initial begin
+    extended_packet p;
+    p = new();
+    p.addr = 10;
+    p.display();
+  end
+endmodule
