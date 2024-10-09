@@ -1,0 +1,17 @@
+class packet;
+  rand byte addr; //8bit signed integer ranging from -128 to 127 bit
+  rand byte data; //8bit signed integer ranging from -128 to 127 bit
+endclass
+
+module rand_methods;
+  initial begin
+    packet pkt;
+    pkt = new();
+    
+    //calling randomize method
+    pkt.randomize();
+    $display("----------------------------------------------------");
+    $display("\taddr = %0d \t data = %0d",pkt.addr,pkt.data);
+    $display("----------------------------------------------------");
+  end
+endmodule
