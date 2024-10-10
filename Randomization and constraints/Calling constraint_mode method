@@ -1,0 +1,28 @@
+class packet;
+  rand bit[3:0] addr;
+  
+  constraint addr_range{addr inside{5,7,9};}
+endclass
+
+module static_constr;
+  initial begin
+    packet pkt;
+    pkt=new();
+    $display("----------------------------------------------------");
+    $display("Before constraint disable");
+    $display("value of constraint mode=%0d",pkt.addr_range.constraint_mode());
+    pkt.randomize();
+    $display("\taddr = %0d",pkt.addr);
+    
+    //disabling constraint
+    pkt.addr_range.constraint_mode(0);
+    
+    $display("---------------------------------------------------");
+    $display("After Constraint disable");
+    $display("Value of constraint mode = %0d",pkt.addr_range.constraint_mode());    
+    pkt.randomize();
+    $display("\taddr = %0d",pkt.addr);
+    $display("---------------------------------------------------");
+  end
+endmodule
+    
