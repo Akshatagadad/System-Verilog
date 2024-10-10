@@ -25,3 +25,4 @@ module static_constr;
     pkt2.randomize();
     $display("\tpkt2.addr = %0d",pkt2.addr);      
   end
+endmodule
